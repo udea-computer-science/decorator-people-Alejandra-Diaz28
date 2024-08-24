@@ -1,13 +1,13 @@
 import operator
 
-
 def sort_by_age(person):
     return person[2]
 
 
 def person_lister(f):
-    def inner(people): ...
-
+    def inner(people): 
+        sorted_people = sorted(people, key=lambda person: int(person[2]))
+        return [f(person) for person in sorted_people]
     return inner
 
 
